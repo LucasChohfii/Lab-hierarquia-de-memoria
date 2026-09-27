@@ -1,0 +1,13 @@
+# Executáveis compilados (gerados por make)
+*_O0
+*_O3
+
+# Saídas binárias do cachegrind (os relatórios .txt são versionados)
+cachegrind/cg_*.out
+cachegrind.out.*
+
+# Prints usados apenas no relatório
+prints/
+
+# Python
+__pycache__/

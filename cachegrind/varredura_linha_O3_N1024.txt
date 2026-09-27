@@ -1,0 +1,23 @@
+==37116== Cachegrind, a high-precision tracing profiler
+==37116== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==37116== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==37116== Command: ./varredura_linha_O3 1024
+==37116== 
+--37116-- warning: L3 cache found, using its data for the LL simulation.
+[Varredura Linha] N=1024 | Pares=524288 | Tempo: 0.017196 s
+==37116== 
+==37116== I refs:        7,583,114
+==37116== I1  misses:        1,466
+==37116== LLi misses:        1,460
+==37116== I1  miss rate:      0.02%
+==37116== LLi miss rate:      0.02%
+==37116== 
+==37116== D refs:        1,107,919  (570,514 rd   + 537,405 wr)
+==37116== D1  misses:      264,009  (132,508 rd   + 131,501 wr)
+==37116== LLd misses:      132,934  (  1,453 rd   + 131,481 wr)
+==37116== D1  miss rate:      23.8% (   23.2%     +    24.5%  )
+==37116== LLd miss rate:      12.0% (    0.3%     +    24.5%  )
+==37116== 
+==37116== LL refs:         265,475  (133,974 rd   + 131,501 wr)
+==37116== LL misses:       134,394  (  2,913 rd   + 131,481 wr)
+==37116== LL miss rate:        1.5% (    0.0%     +    24.5%  )
