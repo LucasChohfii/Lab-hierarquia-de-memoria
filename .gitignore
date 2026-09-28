@@ -12,10 +12,7 @@ README.md
 relatorio.md
 relatorio.pdf
 prints/
-bench.sh
-profile.sh
 bench_log.txt
-graficos.py
 res_*.csv
 *.png
 __pycache__/
