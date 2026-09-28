@@ -12,7 +12,6 @@ def medias(arquivo, chaves, valor="tempo"):
     return {k: sum(v) / len(v) for k, v in d.items()}
 
 
-# ---------- Tabela 1: varredura por linha x por coluna ----------
 v = medias("res_varredura.csv", ["N", "versao"])
 Ns = ["512", "1024", "2048", "4096", "8192"]
 print("\nTabela 1 - Localidade espacial")
@@ -35,7 +34,6 @@ plt.tight_layout()
 plt.savefig("slowdown.png", dpi=150)
 plt.close()
 
-# ---------- Tabela 2: matmul padrao x blocado, -O0 x -O3 ----------
 m = medias("res_matmul.csv", ["N", "versao", "opt"])
 print("\nTabela 2 - Multiplicacao de matrizes (tempo em s)")
 print("N      | versao | -O0     | -O3     | ganho O3")
@@ -46,12 +44,10 @@ for N in ["512", "1024", "1536"]:
 for N in ["512", "1024", "1536"]:
     print(f"  N={N}: blocagem acelera {m[(N,'padrao','O3')]/m[(N,'bloco','O3')]:.2f}x sob -O3")
 
-# ---------- Calibracao do tamanho do bloco ----------
 print("\nCalibracao do bloco B (N=1024, -O3)")
 for linha in csv.DictReader(open("res_bloco.csv")):
     print(f"  B={linha['B']:>4}: {float(linha['tempo']):.4f} s")
 
-# ---------- Tabela 3: escalabilidade com Pthreads ----------
 p = medias("res_pthreads.csv", ["versao", "threads"])
 Ts = ["1", "2", "4", "8", "16"]
 print("\nTabela 3 - Escalabilidade (N=1024)")
@@ -77,7 +73,6 @@ plt.tight_layout()
 plt.savefig("speedup.png", dpi=150)
 plt.close()
 
-# ---------- Cache misses medidos pelo cachegrind ----------
 def metricas(caminho):
     texto = open(caminho).read()
     def pega(rotulo):

@@ -16,3 +16,4 @@ bench_log.txt
 res_*.csv
 *.png
 __pycache__/
+profile.sh
