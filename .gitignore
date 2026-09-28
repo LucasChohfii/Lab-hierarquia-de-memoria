@@ -6,8 +6,16 @@
 cachegrind/cg_*.out
 cachegrind.out.*
 
-# Prints usados apenas no relatório
+# Material de trabalho que não faz parte da entrega no repositório
+Lab-HierarquiaMemoria-PThreads.pdf
+README.md
+relatorio.md
+relatorio.pdf
 prints/
-
-# Python
+bench.sh
+profile.sh
+bench_log.txt
+graficos.py
+res_*.csv
+*.png
 __pycache__/
